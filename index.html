@@ -25,8 +25,8 @@
 
 
         //width and height of the SVG
-        const width = 600;
-        const height = 600;
+        const width = 350;
+        const height = 350;
 
         //create an svg with width and height
         var svg = d3.select('#grid-chart')
@@ -58,9 +58,9 @@
 
         svg.append("text")
             .attr("x", (width / 2))
-            .attr("y", 60)
+            .attr("y", 40)
             .attr("text-anchor", "middle")
-            .style("font-size", "32px")
+            .style("font-size", "18px")
             .text("Rafael Nadal");
 
         console.log(60 < rafaPercentNumber ? tennisFillActive : tennisFill)
@@ -73,12 +73,12 @@
                 return "id" + d;
             })
             .attr('cx', function (d) {
-                return x(d % numCols) * 1.5;
+                return x(d % numCols) -50;
             })
             .attr('cy', function (d) {
-                return y(Math.floor(d / numCols)) * 1.5;
+                return y(Math.floor(d / numCols)) -50;
             })
-            .attr('r', 18)
+            .attr('r', 12)
             .attr('fill', function (d) {
                 return d < rafaPercentNumber ? tennisFillActive : tennisFill;
             })
